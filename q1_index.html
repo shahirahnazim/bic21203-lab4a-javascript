@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+</head>
+<body>
+
+    <div id="myElement">
+        <p id="message">Welcome to my website!</p>
+    </div>
+
+    <button id="changeBtn" type="button">
+        Change Message
+    </button>
+
+    <script>
+        // Select paragraph and button
+        const message = document.getElementById("message");
+        const changeBtn = document.getElementById("changeBtn");
+
+        // Create function
+        function changeMessage() {
+            message.textContent = "Hello there!";
+        }
+
+        // Add click event
+        changeBtn.addEventListener("click", changeMessage);
+    </script>
+
+</body>
+</html>

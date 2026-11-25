@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 2</title>
+</head>
+<body>
+
+    <label for="userInput">Enter a number:</label>
+    <input type="text" id="userInput" placeholder="Enter a number">
+
+    <button id="checkBtn" type="button">Check</button>
+
+    <p id="result" role="status" aria-live="polite"></p>
+
+    <script>
+        // Select HTML elements
+        const userInput = document.getElementById("userInput");
+        const checkBtn = document.getElementById("checkBtn");
+        const result = document.getElementById("result");
+
+        // Create function
+        function checkInput() {
+
+            // Get input value
+            const input = userInput.value.trim();
+
+            // Check empty input
+            if (input === "") {
+                result.textContent = "Please enter a valid number!";
+            }
+            else {
+                const number = Number(input);
+
+                // Check valid number
+                if (!Number.isFinite(number)) {
+                    result.textContent = "Please enter a valid number!";
+                }
+                else if (number < 10) {
+                    result.textContent = "The number is lower than 10";
+                }
+                else if (number > 10) {
+                    result.textContent = "The number is higher than 10";
+                }
+                else {
+                    result.textContent = "The number is equal to 10";
+                }
+            }
+        }
+
+        // Add click event
+        checkBtn.addEventListener("click", checkInput);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 3</title>
+</head>
+<body>
+
+    <button id="generateBtn" type="button">
+        Generate
+    </button>
+
+    <ol id="numberList"></ol>
+
+    <script>
+        // Select HTML elements
+        const generateBtn = document.getElementById("generateBtn");
+        const numberList = document.getElementById("numberList");
+
+        // Create function
+        function generateNumbers() {
+
+            // Clear existing list
+            numberList.textContent = "";
+
+            // Generate numbers from 1 to 5
+            for (let i = 1; i <= 5; i++) {
+
+                // Create new list item
+                const li = document.createElement("li");
+
+                // Set text
+                li.textContent = "The number is " + i;
+
+                // Add item to ordered list
+                numberList.appendChild(li);
+            }
+        }
+
+        // Add click event
+        generateBtn.addEventListener("click", generateNumbers);
+    </script>
+</body>
+</html>
